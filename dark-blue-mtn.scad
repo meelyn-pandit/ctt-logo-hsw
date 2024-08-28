@@ -107,6 +107,7 @@ module wall(height, wall_thickness, length){
     fh = 0.5;//fillet height
     
     difference(){
+        color([0,0,1])
         rotate([90,0,0])
             linear_extrude(length)   
             polygon([[0,0], [0,hmax], [tmin,hmax], [tmin,hmax-hd], [tmax,hmin], [tmax,fh], [tmax-ft,0]]);
