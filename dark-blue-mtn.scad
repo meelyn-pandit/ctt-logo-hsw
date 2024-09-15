@@ -105,7 +105,7 @@ module wall(height, wall_thickness, length){
     tmin=wall_thickness-1;   
     ft = 0.18;//fillet thickness
     fh = 0.5;//fillet height
-    
+    color("blue")
     difference(){
         rotate([90,0,0])
             linear_extrude(length)   

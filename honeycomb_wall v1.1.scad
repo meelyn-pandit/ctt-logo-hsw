@@ -116,137 +116,32 @@ module section_unioned_with_cutout(numx,numy) {
     }
 }
 
-difference() {
-    color([1,0,0])
-    if (odd) {
-        section_unioned_with_cutout(numx*2,numy);
-    } else {
-        mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-    }
-    if (vslot) {
-        xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-    }
-    if (mounting_screw) {
-        right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-    }
-}
-
-difference() {
-        color([0,1,0])
-
-    rotate([0,0,180]){
-        translate([0,180,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
+module ender3_wall() {   
+    difference() {
+//        color("red")
+        if (odd) {
+            section_unioned_with_cutout(numx*2,numy);
+        } else {
+            mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
+        }
+        if (vslot) {
+            xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
+        }
+        if (mounting_screw) {
+            right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
         }
     }
 }
 
-difference() {
+ender3_wall();
+
+translate([0,-183,0])
+    rotate([0,0,180])
+    color([0,1,0])
+        ender3_wall();
+
+translate([0,-360,0])
+    rotate([0,0,180])
         color([0,0,1])
+            ender3_wall();
 
-    rotate([0,0,180]){
-        translate([0,-180,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
-        }
-    }
-}
-
-difference() {
-        color([1,1,0])
-
-//    rotate([0,0,180]){
-        translate([0,-360,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
-        }
-//    }
-}
-
-difference() {
-        color([1,1,1])
-
-    rotate([0,0,180]){
-        translate([0,540,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
-        }
-    }
-}
-
-difference() {
-        color([0.1,0,0])
-
-//    rotate([0,0,180]){
-        translate([0,-720,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
-        }
-//    }
-}
-
-difference() {
-        color([1,0,0])
-
-    rotate([0,0,180]){
-        translate([0,900,0]){
-            if (odd) {
-                section_unioned_with_cutout(numx*2,numy);
-            } else {
-                mirror([1,0,0]) section_unioned_with_cutout(numx*2,numy);
-            }
-            if (vslot) {
-                xrot(-90) right(vslot_x) fwd(9.9) down(vslot_length/2) linear_extrude(vslot_length) polygon([[-3,10],[-3,8.5],[-6,8.5],[-6,7],[-2.5,3.4],[2.5,3.4],[6,7],[6,8.5],[3,8.5],[3,10]]);
-            }
-            if (mounting_screw) {
-                right(mounting_screw_x) ycopies(spacing=mounting_screw_spacing, l=mounting_screw_distance) screw_hole(mounting_screw_spec,head=mounting_screw_head,anchor=TOP,l=20,orient=BOTTOM);
-            }
-        }
-    }
-}
