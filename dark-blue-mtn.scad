@@ -16,7 +16,7 @@ max_grid_height=100;
 fill=false;;
 flip_staggering=false;
 //Amount of hexagons per column. Each entry defines a one column, where the number specifies the amount of hex units that will be generated for the respective column. (Ignored if "fill" is checked)
-columns=[2,2,2,2,4,3,4,3,5,6,8,6,5,3,2];
+columns=[1,1,1,1,4,4,4,4,4,5,6,8,10,8,6,5,3,1];
 include_offsets=false;
 //Optional: Offset for each column. This will ignore grid size limits.
 column_offsets=[0,-2,-3,-1,0,2,4];

@@ -119,12 +119,7 @@ module section_unioned_with_cutout(numx,numy) {
 
 
 
-//translate([0,0,-10]){
-//    rotate([0,0,-90]){
-//        color([0,0,1])
-//        import("/home/meelyn/Documents/3d_printing/ctt-logo-hsw/stl/dark-blue-mtn.stl", convexity=3);
-//    }
-//}
+
 
 module ender3_wall() {   
     difference() {
@@ -143,6 +138,14 @@ module ender3_wall() {
     }
 }
 
+module blue_mtn() {
+    rotate([0,0,90]){
+        color([0,0,1])
+        import("/home/meelyn/Documents/3d_printing/ctt-logo-hsw/stl/dark-blue-mtn.stl", convexity=3);
+    }
+
+}
+
 ender3_wall();
 
 translate([0,-183,0])
@@ -150,7 +153,10 @@ translate([0,-183,0])
     color([0,1,0])
         ender3_wall();
 
-translate([0,-360,0])
-    rotate([0,0,180])
-        color([0,0,1])
+translate([0,-366,0])
+//    rotate([0,0,180])
+        color([1,0,])
             ender3_wall();
+
+translate([-112,-380,0])
+    blue_mtn();
