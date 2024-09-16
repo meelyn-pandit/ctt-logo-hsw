@@ -14,9 +14,9 @@ max_grid_height=100;
 /*[ Grid shape ]*/
 //If checked, ignores custom column sizes and fills grid to maximum size.
 fill=false;;
-flip_staggering=true;
+flip_staggering=false;
 //Amount of hexagons per column. Each entry defines a one column, where the number specifies the amount of hex units that will be generated for the respective column. (Ignored if "fill" is checked)
-columns=[4,4,4,6,7,9,8,7,5];
+columns=[1,2,3,4,5];
 include_offsets=false;
 //Optional: Offset for each column. This will ignore grid size limits.
 column_offsets=[0,-2,-3,-1,0,2,4];
@@ -26,7 +26,7 @@ column_gaps=[[], [3,4], [4,5], [2]];
 
 /*[ Flat edges ]*/
 edge_left = false;
-edge_top = true;
+edge_top = false;
 edge_right = false;
 edge_bottom = false;
 

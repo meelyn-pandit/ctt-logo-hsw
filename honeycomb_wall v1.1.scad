@@ -158,5 +158,26 @@ translate([0,-366,0])
         color([1,0,])
             ender3_wall();
 
-translate([-112,-380,0])
-    blue_mtn();
+translate([0,-549,0])
+    rotate([0,0,180])
+        color([1])
+            ender3_wall();
+
+translate([-200,-549,0])
+//    rotate([0,0,180])
+        color([0,1,1])
+            ender3_wall();
+
+
+translate([0,-732,0])
+//    rotate([0,0,180])
+        color([0,1]) // cyan
+            ender3_wall();
+
+translate([-200,-732,0])
+    rotate([0,0,180])
+        color([0,0,1])
+            ender3_wall();
+
+//translate([-112,-380,0])
+//    blue_mtn();
