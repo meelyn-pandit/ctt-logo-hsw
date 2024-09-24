@@ -16,7 +16,7 @@ max_grid_height=100;
 fill=false;
 flip_staggering=true;
 //Amount of hexagons per column. Each entry defines a one column, where the number specifies the amount of hex units that will be generated for the respective column. (Ignored if "fill" is checked)
-columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9,];
+columns=[ 9, 10, 9, 10, 9, 10, 9,];
 //columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9, 10];
 //columns=[10, 9, 10, 9, 10, 9, 10, 9, 10];
 include_offsets=false;
@@ -25,15 +25,13 @@ column_offsets=[0,-2,-3,-1,0,2,4];
 include_gaps=true;
 //Optional: Gaps for each column. *NOTE: Change these values in the code. Seems like 2D vector parameters aren't supported by the parameter editor and are always overwritten by the defaults.
 column_gaps=[
-             [2,3,4,5,6], // column 1
-             [3,4,5,6,],  //column 2
-             [4,5,6,], // column 3
-             [1,5,6,],   // column 4
-             [1,4,5,], // column 5
-             [1,2,5,6,], // column 6
-             [1,5,], // column 7
-             [1,2,], // column 8
-             [1,2,3,], // column 9
+               [1,7,8,9], // column 1
+               [1,2,7,8,9,10], // column 2
+               [1,2,3,7,8,9], //column 3
+               [1,2,3,4,7,8,9,10], // column 4
+               [1,2,3,6,7,8,9,], // column 5
+               [1,2,3,4,7,8,9,10], // column 6
+               [1,2,3,4,6,7,8,9], //column 7
              ];
 
 /*[ Flat edges ]*/
@@ -117,7 +115,7 @@ module wall(height, wall_thickness, length){
     tmin=wall_thickness-1;   
     ft = 0.18;//fillet thickness
     fh = 0.5;//fillet height
-    color("white")
+    color("blue")
     difference(){
         color([0,0,1])
         rotate([90,0,0])
