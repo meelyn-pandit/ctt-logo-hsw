@@ -16,31 +16,30 @@ max_grid_height=100;
 fill=false;
 flip_staggering=true;
 //Amount of hexagons per column. Each entry defines a one column, where the number specifies the amount of hex units that will be generated for the respective column. (Ignored if "fill" is checked)
-//columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9,];
-columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9,];
-//columns=[10, 9, 10, 9, 10, 9, 10, 9, 10];
+columns=[9,10,9,10,9,10,9,10,9,10];
 include_offsets=false;
 //Optional: Offset for each column. This will ignore grid size limits.
 column_offsets=[0,-2,-3,-1,0,2,4];
 include_gaps=true;
 //Optional: Gaps for each column. *NOTE: Change these values in the code. Seems like 2D vector parameters aren't supported by the parameter editor and are always overwritten by the defaults.
 column_gaps=[
-             [1,2,3,4], // column 1
-             [2,3,4,5], // column 2
-             [2,3,4,5],  // column 3
-             [2,3,4,5],  // column 4
-             [1,2,3,4,5,],  // column 5
-             [2,3,4,5,6,],  // column 6
-             [3,4,5,],  // column 7
-             [4,5,6,],  // column 8
-             [3,4,5],  // column 9
-             ];
+             [1,2,3,4,5,6,7,8,9], // [], column 1
+             [1,2,3,4,5,6,7,8,9,10], // [], column 2
+             [1,2,3,4,5,6,7,8,9], // [1,], column 3
+             [1,2,3,4,5,6,7,8,9,10], // [1,2], column 4
+             [1,2,3,4,6,7,8,9], // [1,2,5], column 5
+             [1,2,3,4,5,8,9,10], // [1,2,3,6,7], column 6
+             [1,2,3,4,5,8,9], // [1,2,6,7], column 7
+             [1,2,3,4,5,10], // [1,2,3,6,7,8,9], column 8
+             [1,2,3,4,5], // [1,2,6,7,8,9], column 9
+             [1,2,3,4,5], // [1,2,3,6,7,8,9,10], column 10
+            ];
 
 /*[ Flat edges ]*/
-edge_left = false;
-edge_top = false;
+edge_left = true;
+edge_top = true;
 edge_right = false;
-edge_bottom = true;
+edge_bottom = false;
 
 
 //Calculated global variables

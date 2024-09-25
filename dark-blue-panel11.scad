@@ -14,27 +14,25 @@ max_grid_height=100;
 /*[ Grid shape ]*/
 //If checked, ignores custom column sizes and fills grid to maximum size.
 fill=false;
-flip_staggering=true;
+flip_staggering=false;
 //Amount of hexagons per column. Each entry defines a one column, where the number specifies the amount of hex units that will be generated for the respective column. (Ignored if "fill" is checked)
-//columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9,];
-columns=[ 9, 10, 9, 10, 9, 10, 9, 10, 9,];
-//columns=[10, 9, 10, 9, 10, 9, 10, 9, 10];
+columns=[10,9,10,9,10,9,10,9,10];
 include_offsets=false;
 //Optional: Offset for each column. This will ignore grid size limits.
 column_offsets=[0,-2,-3,-1,0,2,4];
 include_gaps=true;
 //Optional: Gaps for each column. *NOTE: Change these values in the code. Seems like 2D vector parameters aren't supported by the parameter editor and are always overwritten by the defaults.
 column_gaps=[
-             [1,2,3,4], // column 1
-             [2,3,4,5], // column 2
-             [2,3,4,5],  // column 3
-             [2,3,4,5],  // column 4
-             [1,2,3,4,5,],  // column 5
-             [2,3,4,5,6,],  // column 6
-             [3,4,5,],  // column 7
-             [4,5,6,],  // column 8
-             [3,4,5],  // column 9
-             ];
+             [2,3,4,5,6,7,8,9,10], //[1], // column 1
+             [2,3,4,5,6,7,8,9,], //[1], // column 2
+             [3,4,5,6,7,8,9,10], //[1,2], // column 3
+             [3,4,5,6,7,8,9,], //[1,2], // column 4
+             [4,5,6,7,8,9,10], //[1,2,3], // column 5
+             [4,5,6,7,8,9,], //[1,2,3], // column 6
+             [5,6,7,8,9,10], //[1,2,3,4], // column 7
+             [5,6,7,8,9,], //[1,2,3,4], // column 8
+             [5,6,7,8,9,10], //[1,2,3,4], // column 9
+            ];
 
 /*[ Flat edges ]*/
 edge_left = false;
@@ -117,7 +115,7 @@ module wall(height, wall_thickness, length){
     tmin=wall_thickness-1;   
     ft = 0.18;//fillet thickness
     fh = 0.5;//fillet height
-    color("white")
+    color("blue")
     difference(){
         color([0,0,1])
         rotate([90,0,0])

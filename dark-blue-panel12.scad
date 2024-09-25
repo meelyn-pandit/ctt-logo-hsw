@@ -25,15 +25,15 @@ column_offsets=[0,-2,-3,-1,0,2,4];
 include_gaps=true;
 //Optional: Gaps for each column. *NOTE: Change these values in the code. Seems like 2D vector parameters aren't supported by the parameter editor and are always overwritten by the defaults.
 column_gaps=[
-             [1,2,3,4], // column 1
-             [2,3,4,5], // column 2
-             [2,3,4,5],  // column 3
-             [2,3,4,5],  // column 4
-             [1,2,3,4,5,],  // column 5
-             [2,3,4,5,6,],  // column 6
-             [3,4,5,],  // column 7
-             [4,5,6,],  // column 8
-             [3,4,5],  // column 9
+             [5,6,7,8,9], //[1,2,3,4], // column 1
+             [1,6,7,8,9,10], //[2,3,4,5], // column 2
+             [1,6,7,8,9], //[2,3,4,5],  // column 3
+             [1,6,7,8,9,10],//[2,3,4,5],  // column 4
+             [6,7,8,9],//[1,2,3,4,5,],  // column 5
+             [1,7,8,9,10], //[2,3,4,5,6,],  // column 6
+             [1,2,6,7,8,9], //[3,4,5,],  // column 7
+             [1,2,3,7,8,9,10], //[4,5,6,],  // column 8
+             [1,2,6,7,8,9], //[3,4,5],  // column 9
              ];
 
 /*[ Flat edges ]*/
@@ -117,7 +117,7 @@ module wall(height, wall_thickness, length){
     tmin=wall_thickness-1;   
     ft = 0.18;//fillet thickness
     fh = 0.5;//fillet height
-    color("white")
+    color("blue")
     difference(){
         color([0,0,1])
         rotate([90,0,0])
